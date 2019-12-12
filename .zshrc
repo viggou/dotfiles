@@ -1,72 +1,30 @@
-#  _____    _
-# |__  /___| |__  _ __ ___
-#   / // __| '_ \| '__/ __|
-#  / /_\__ \ | | | | | (__
-# /____|___/_| |_|_|  \___|
-
-# Path to your oh-my-zsh installation.
-export ZSH="/home/pix/.oh-my-zsh"
-
-# neofetch when opening a new terminal
-neofetch
-
-#DISABLE_AUTO_TITLE="true"
-
-POWERLEVEL9K_BATTERY_CHARGING='yellow'
-POWERLEVEL9K_BATTERY_CHARGED='green'
-POWERLEVEL9K_BATTERY_DISCONNECTED='$DEFAULT_COLOR'
-POWERLEVEL9K_BATTERY_LOW_THRESHOLD='10'
-POWERLEVEL9K_BATTERY_LOW_COLOR='red'
-POWERLEVEL9K_BATTERY_ICON='\uf1e6 '
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='\uf0da '
-POWERLEVEL9K_VCS_GIT_ICON='\ue60a'
-
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
-#POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
-
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon battery context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time background_jobs ram virtualenv rbenv rvm)
-
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
-
-#POWERLEVEL9K_CUSTOM_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
-POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d.%m.%y}"
-
-POWERLEVEL9K_STATUS_VERBOSE=false
-
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-
-POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME='powerlevel9k/powerlevel9k'
-
-# Command auto-correction.
-ENABLE_CORRECTION="true"
-
-# Command execution time stamp shown in the history command output.
-HIST_STAMPS="mm/dd/yyyy"
-
-# old stuff
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Path to your oh-my-zsh installation.
+export ZSH="/home/pix/.oh-my-zsh"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export TERMINAL="termite"
+export BROWSER="firefox-nightly"
+export EDITOR="nvim"
+
+alias bcfg="nvim ~/.config/bspwm/bspwmrc"
+alias sxcfg="nvim ~/.config/sxhkd/sxhkdrc"
+alias pcfg="nvim ~/.config/polybar/config"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="powerlevel9k/powerlevel9k"
-#ZSH_THEME="dpoggi"
-
-#POWERLEVEL9K_MODE="nerdfont-complete"
-
-#POWERLEVEL9K_DISABLE_RPROMPT=true
-#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="▶ "
-#POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -126,7 +84,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git debian lol sudo)
+plugins=(git sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -155,3 +113,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
