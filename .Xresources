@@ -1,0 +1,59 @@
+! ██╗░░██╗██████╗░███████╗███████╗░██████╗░██╗░░░██╗██████╗░░██████╗███████╗███████╗
+! ╚██╗██╔╝██╔══██╗██╔════╝██╔════╝██╔═══██╗██║░░░██║██╔══██╗██╔════╝██╔════╝██╔════╝
+! ░╚███╔╝░██████╔╝█████╗░░███████╗██║░░░██║██║░░░██║██████╔╝██║░░░░░█████╗░░███████╗
+! ░██╔██╗░██╔══██╗██╔══╝░░╚════██║██║░░░██║██║░░░██║██╔══██╗██║░░░░░██╔══╝░░╚════██║
+! ██╔╝░██╗██║░░██║███████╗███████║╚██████╔╝╚██████╔╝██║░░██║╚██████╗███████╗███████║
+! ╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝╚══════╝░╚═════╝░░╚═════╝░╚═╝░░╚═╝░╚═════╝╚══════╝╚══════╝
+!
+! -----------------------------------
+Xft.dpi: 102
+!Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+
+!xcursor.theme:            Vanilla-DMZ
+xscreensaver.fade:   false
+xscreensaver.unfade: false
+! ===== urxvt =====
+URxvt.scrollBar: off
+URxvt.font: xft:monospace:size=12
+!URxvt.internalBorder:     22
+! =================
+*background:	#1D1F28
+*foreground:	#FDFDFD
+*cursorColor:	#C574DD
+*color0:	#282A36
+*color1:	#F37F97
+*color2:	#5ADECD
+*color3:	#F2A272
+*color4:	#8897F4
+*color5:	#C574DD
+*color6:	#79E6F3
+*color7:	#FDFDFD
+*color8:	#414458
+*color9:	#FF4971
+*color10:	#18E3C8
+*color11:	#FF8037
+*color12:	#556FFF
+*color13:	#B043D1
+*color14:	#3FDCEE
+*color15:	#BEBEC1
+
+rofi.color-window: argb:c82d303b, #7c8389, #1d1f21
+rofi.color-normal: argb:3c1d1f21, #c4cbd4, argb:96404552, #4084d6, #f9f9f9
+rofi.color-urgent: argb:2c1d1f21, #cc6666, argb:e54b5160, #a54242, #f9f9f9
+rofi.color-active: argb:2c1d1f21, #65acff, argb:e44b5160, #4491ed, #f9f9f9
+rofi.width: 20
+rofi.height: 120
+rofi.lines: 4
+rofi.columns: 1
+rofi.font: Noto Sans 14
+rofi.bw: 0
+rofi.padding: 500
+rofi.eh: 1
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
