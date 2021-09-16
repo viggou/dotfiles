@@ -1,30 +1,53 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export SPICETIFY_INSTALL="/Users/yaypixxo/spicetify-cli"
+export PATH="$SPICETIFY_INSTALL:$PATH"
+
+export THEOS=~/theos
+
+# Disable homebrew auto update
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+autoload -U colors && colors
+
+# Fix comp issues (macports thing)
+ZSH_DISABLE_COMPFIX="true"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/pix/.oh-my-zsh"
+export ZSH="/Users/yaypixxo/.oh-my-zsh"
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export TERMINAL="termite"
-export BROWSER="firefox-nightly"
-export EDITOR="nvim"
+export THEOS=~/theos
 
-alias bcfg="nvim ~/.config/bspwm/bspwmrc"
-alias sxcfg="nvim ~/.config/sxhkd/sxhkdrc"
-alias pcfg="nvim ~/.config/polybar/config"
+# Aliases
+alias uwu="ssh -Y pix@172.105.85.61"
+alias kage="ssh -Y yaypixxo@85.204.195.61"
+alias kageimac="ssh -Y yaypixxo@85.204.195.61 -p 42"
+
+alias nano="/usr/local/bin/nano"
+alias mkd="mkdir -pv"
+alias bc="bc -l"
+alias ccat="highlight --out-format=ansi"
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -vi"
+alias yt="youtube-dl --add-metadata -i"
+alias ytx="yt -x -f audio/wav"
+
+#alias ls="ls -hN --color=auto"
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+
+alias ka="killall"
+alias bw="brew -v"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="agnoster"
+
+# Prompt
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%} $%b "
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -88,6 +111,13 @@ plugins=(git sudo)
 
 source $ZSH/oh-my-zsh.sh
 
+# Tab completion
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -114,5 +144,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+export HOMEBREW_GITHUB_API_TOKEN=e195010429bb2d56dfdf962717a21031e3cdb8c4
