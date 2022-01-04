@@ -149,4 +149,3 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-export HOMEBREW_GITHUB_API_TOKEN=e195010429bb2d56dfdf962717a21031e3cdb8c4
